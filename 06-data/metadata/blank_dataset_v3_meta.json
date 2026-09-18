@@ -1,0 +1,13 @@
+{
+  "dataset_name": "Blank Dataset v3",
+  "source": "HuggingFaceFW/fineweb-edu",
+  "source_config": "sample-10BT",
+  "target_characters": 3000000000,
+  "verified_characters": 3000000000,
+  "minimum_document_length": 300,
+  "documents_seen": 631118,
+  "documents_written": 630780,
+  "documents_skipped": 338,
+  "file_size_bytes": 3015359957,
+  "build_seconds": 185.07839549999335
+}
