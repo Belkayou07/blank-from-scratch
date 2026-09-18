@@ -1,0 +1,14 @@
+{
+  "dataset_name": "HuggingFaceFW/fineweb-edu",
+  "dataset_config": "sample-10BT",
+  "output_file": "blank_dataset_v2.txt",
+  "target_characters": 1000000000,
+  "characters_written": 1000000000,
+  "documents_seen": 210916,
+  "documents_written": 210805,
+  "documents_skipped": 111,
+  "minimum_document_length": 300,
+  "file_size_bytes": 1005174687,
+  "newline_format": "LF",
+  "encoding": "UTF-8"
+}
