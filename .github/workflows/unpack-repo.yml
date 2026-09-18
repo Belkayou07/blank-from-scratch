@@ -1,0 +1,43 @@
+name: Import cleaned repository
+
+on:
+  push:
+    paths:
+      - "_repo_payload.b64"
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Expand prepared source tree
+        shell: bash
+        run: |
+          if [ ! -f _repo_payload.b64 ]; then
+            echo "Payload already removed; nothing to do."
+            exit 0
+          fi
+
+          base64 --decode _repo_payload.b64 > _repo_payload.zip
+          unzip -o _repo_payload.zip
+          rm -f _repo_payload.b64 _repo_payload.zip
+
+      - name: Commit organized project
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Import organized LLM learning journey"
+          git push
