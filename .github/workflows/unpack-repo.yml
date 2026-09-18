@@ -3,7 +3,7 @@ name: Import cleaned repository
 on:
   push:
     paths:
-      - "_repo_payload.b64"
+      - "_payload/done"
 
 permissions:
   contents: write
@@ -18,13 +18,16 @@ jobs:
       - name: Expand prepared source tree
         shell: bash
         run: |
-          if [ ! -f _repo_payload.b64 ]; then
-            echo "Payload already removed; nothing to do."
+          if [ ! -f _payload/done ]; then
+            echo "Payload marker already removed; nothing to do."
             exit 0
           fi
 
+          cat _payload/chunk_*.txt > _repo_payload.b64
           base64 --decode _repo_payload.b64 > _repo_payload.zip
           unzip -o _repo_payload.zip
+
+          rm -rf _payload
           rm -f _repo_payload.b64 _repo_payload.zip
 
       - name: Commit organized project
