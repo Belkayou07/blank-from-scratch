@@ -1,13 +1,3 @@
-# 03 — Attention and Transformers
+# 03-attention
 
-This stage introduced self-attention.
-
-Tokens could now use information from earlier tokens instead of only fixed local context.
-
-Then attention was combined with:
-
-- normalization
-- residual connections
-- an MLP
-
-This produced a Transformer block.
+Source files from this stage of the learning journey.

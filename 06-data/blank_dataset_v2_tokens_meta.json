@@ -1,0 +1,15 @@
+{
+  "dataset_file": "blank_dataset_v2_tokens.bin",
+  "source_text_file": "blank_dataset_v2.txt",
+  "tokenizer_file": "blank_tokenizer_v1.json",
+  "vocab_size": 4096,
+  "dtype": "uint16",
+  "total_characters": 1000000000,
+  "total_tokens": 291566902,
+  "characters_per_token": 3.429744573682784,
+  "tokens_per_character": 0.291566902,
+  "train_fraction": 0.98,
+  "train_tokens": 285735563,
+  "validation_tokens": 5831339,
+  "chunk_characters": 8000000
+}

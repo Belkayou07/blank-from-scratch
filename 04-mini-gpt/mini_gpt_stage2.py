@@ -52,15 +52,13 @@ vocab_size = len(vocabulary)
 
 stoi = {
     character: index
-    for index, character
-    in enumerate(vocabulary)
+    for index, character in enumerate(vocabulary)
 }
 
 
 itos = {
     index: character
-    for character, index
-    in stoi.items()
+    for character, index in stoi.items()
 }
 
 

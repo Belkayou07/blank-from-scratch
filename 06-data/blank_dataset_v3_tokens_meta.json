@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Blank Dataset v3 Tokens",
+  "source_text_file": "blank_dataset_v3.txt",
+  "tokenizer_file": "blank_tokenizer_v1.json",
+  "dtype": "uint16",
+  "vocab_size": 4096,
+  "total_characters": 3000000000,
+  "total_tokens": 875787809,
+  "characters_per_token": 3.4254872803327636,
+  "tokens_per_character": 0.29192926966666666,
+  "train_fraction": 0.98,
+  "train_tokens": 858272052,
+  "validation_tokens": 17515757,
+  "chunk_characters": 8000000,
+  "chunks_processed": 375,
+  "binary_size_bytes": 1751575618,
+  "minimum_token_id": 0,
+  "maximum_token_id": 4095,
+  "tokenization_seconds": 1393.859569799999,
+  "tokens_per_second": 628318.539381743,
+  "characters_per_second": 2152297.1646494213,
+  "effective_context_characters": {
+    "256": 876.9247437651875,
+    "512": 1753.849487530375,
+    "1024": 3507.69897506075,
+    "2048": 7015.3979501215,
+    "4096": 14030.795900243
+  }
+}

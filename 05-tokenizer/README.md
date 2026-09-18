@@ -1,7 +1,3 @@
-# 05 — Tokenizer
+# 05-tokenizer
 
-Character-level text was replaced with a custom BPE tokenizer.
-
-The final tokenizer used a vocabulary of 4,096 tokens.
-
-This reduced the number of tokens needed to represent normal text.
+Source files from this stage of the learning journey.
