@@ -4,37 +4,58 @@ A learning project where I build a small GPT-style language model from the basic
 
 The goal is not to copy a finished AI model. The goal is to understand the main ideas by building them step by step.
 
-## Where the project is now
+## Current stage
 
-Current stage: **Blank-2**
+**Blank-2**
 
-- tokenizer: custom BPE, 4,096 tokens
-- dataset v3: 3 billion characters
+- custom BPE tokenizer: 4,096 tokens
+- Dataset v3: 3 billion characters
 - tokenized data: 875,787,809 tokens
-- Blank-2 size: 61,627,520 parameters
+- training split: 858,272,052 tokens
+- model size: 61,627,520 parameters
 - context: 512 tokens
 - architecture: decoder-only Transformer
-- training stack: PyTorch + ROCm, BF16, SDPA, fused AdamW
-- status: smoke test passed; full Blank-2 training not started yet
+- stack: PyTorch + ROCm, BF16, SDPA, fused AdamW
+- status: smoke test passed; full Blank-2 training has not started
 
-## The idea in one sentence
+## The main idea
 
-A language model reads earlier tokens and learns to predict the next token.
+```text
+previous tokens → model → next-token prediction
+                         ↓
+                        loss
+                         ↓
+                      gradients
+                         ↓
+                 update parameters
+```
 
-## Repository map
+## Repository
 
-- `01-foundations/` — first models, gradients, small neural networks
-- `02-language-models/` — bigram, context and embedding models
-- `03-attention/` — self-attention and Transformer blocks
-- `04-mini-gpt/` — first real small GPT-style models
-- `05-tokenizer/` — BPE tokenizer work
-- `06-data/` — dataset building and tokenization scripts
-- `07-blank-0/` — first larger general model
+- `01-foundations/` — weight, bias, gradients, autograd, MLP
+- `02-language-models/` — bigram, context and embeddings
+- `03-attention/` — self-attention and Transformers
+- `04-mini-gpt/` — first GPT-style models
+- `05-tokenizer/` — BPE tokenizer
+- `06-data/` — dataset builders, tokenization and metadata
+- `07-blank-0/` — first larger base model
 - `08-blank-1/` — 33.56M parameter model
 - `09-blank-2/` — current 61.63M parameter model
 - `benchmarks/` — GPU and speed tests
-- `docs/` — short explanations and results
+- `docs/` — short explanations, results and roadmap
 
-The large datasets, checkpoints and virtual environments are intentionally not stored in Git.
+## Read these first
 
-See [JOURNEY.md](JOURNEY.md) for the full path in simple language.
+- [JOURNEY.md](JOURNEY.md) — the whole journey in simple language
+- [Core ideas](docs/CORE_IDEAS.md) — short explanations
+- [Results](docs/RESULTS.md) — what each scale-up changed
+- [Setup](docs/SETUP.md) — packages and large-file notes
+- [Roadmap](docs/ROADMAP.md) — what comes next
+
+## Large files
+
+Datasets, token binaries, checkpoints, virtual environments and caches are not committed.
+
+They are too large for a normal Git repository and can be rebuilt from the scripts.
+
+Some of the long training scripts were formatting-cleaned when this learning folder was reorganized. The model logic and experiment settings were kept, while large generated artifacts were left out.
